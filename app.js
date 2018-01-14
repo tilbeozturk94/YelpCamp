@@ -18,8 +18,7 @@ app.use(methodOverride("_method"));
 app.use(flash());
 //seedDB();
 
-//mongoose.connect("mongodb://localhost/yelp_camp", {useMongoClient: true});
-mongoose.connect("mongodb://tilbe:7942ceviz@ds251737.mlab.com:51737/yelpcamp");
+mongoose.connect(process.env.DATABASEURL, {useMongoClient: true});
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
