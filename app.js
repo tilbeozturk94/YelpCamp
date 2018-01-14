@@ -39,6 +39,10 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+//momentjs config and define in every file
+
+app.locals.moment = require("moment");
+
 app.use(function(req,res,next){ //to use the current user in every file!
     
     res.locals.currentUser = req.user;
