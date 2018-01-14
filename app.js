@@ -17,7 +17,9 @@ var User = require("./models/user");
 app.use(methodOverride("_method"));
 app.use(flash());
 //seedDB();
-mongoose.connect("mongodb://localhost/yelp_camp", {useMongoClient: true});
+
+//mongoose.connect("mongodb://localhost/yelp_camp", {useMongoClient: true});
+mongoose.connect("mongodb://tilbe:7942ceviz@ds251737.mlab.com:51737/yelpcamp");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
